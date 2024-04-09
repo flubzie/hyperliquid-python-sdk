@@ -22,6 +22,8 @@ def subscription_to_identifier(subscription: Subscription) -> str:
         return "userEvents"
     elif subscription["type"] == "candle":
         return "candle"
+    elif subscription["type"] == "userFills":
+        return "userFills"
 
 
 def ws_msg_to_identifier(ws_msg: WsMsg) -> Optional[str]:
@@ -41,6 +43,8 @@ def ws_msg_to_identifier(ws_msg: WsMsg) -> Optional[str]:
         return "userEvents"
     elif ws_msg["channel"] == "candle":
         return "candle"
+    elif ws_msg["channel"] == "userFills":
+        return "userFills"
 
 
 class WebsocketManager(threading.Thread):
