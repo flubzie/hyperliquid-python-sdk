@@ -43,7 +43,7 @@ def ws_msg_to_identifier(ws_msg: WsMsg) -> Optional[str]:
         return "userEvents"
     elif ws_msg["channel"] == "candle":
         return "candle"
-    elif ws_msg["channel"] == "fills":
+    elif ws_msg["channel"] == "userFills":
         return "userFills"
 
 
